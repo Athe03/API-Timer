@@ -1,6 +1,6 @@
-import Timer from "../models/TimerModel.js";
+const Timer = require("../models/TimerModel.js") ;
 
-import { ObjectId } from "bson";
+ObjectId = require('mongodb').ObjectId;
 
 const submitReactionTime = (async(req,res) => {
     const {time} = req.body;

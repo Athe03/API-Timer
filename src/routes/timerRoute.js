@@ -1,6 +1,7 @@
+const middleware = require('../middlewares/jwtMiddlewares.js');
+
 const express = require("express");
 const router = express.Router();
-const middleware = require('../middlewares/jwtMiddlewares.js');
 
 const {
     submitReactionTime,

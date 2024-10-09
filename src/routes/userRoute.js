@@ -10,4 +10,7 @@ router.post("/login", login)
 
 router.post("/register", register)
 
-module.exports = router
+module.exports = {
+    login,
+    register
+}

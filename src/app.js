@@ -1,21 +1,11 @@
-const express = require('express')
-const mongoose = require('mongoose');
+const { default: connectDB } = require('./services/connectDB.js');
+const { default: importRoute } = require('./services/importRoute.js');
+const { default: serveur } = require('./services/serveur.js');
 
-const userRoute = require('./routes/userRoute.js')
-const timerRoute = require('./routes/timerRoute.js')
+const express = require('express')
 
 const app = express()
-const port = 3000
 
-async function main() {
-    await mongoose.connect('mongodb://mongo/apiTimer');
-}
-
-app.use(express.json())
-
-app.use('/api/user', userRoute)
-app.use('/api/timer', timerRoute)
-
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`)
-})
+connectDB;
+importRoute;
+serveur;
