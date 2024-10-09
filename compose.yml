@@ -1,0 +1,13 @@
+services:
+  node:
+    build: ./src
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/home/node/app
+  
+  mongo:
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./data:/data/db
